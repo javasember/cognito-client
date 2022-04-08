@@ -1,0 +1,6 @@
+cognito:
+  client:
+    key:    ${aws.key}
+    secret: ${aws.secret}
+    region: ${aws.region}
+    poolId: ${aws.cognito.poolid}
