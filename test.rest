@@ -1,0 +1,34 @@
+POST https://cognito-idp.eu-central-1.amazonaws.com/
+X-Amz-Target: AWSCognitoIdentityProviderService.InitiateAuth
+Content-Type: application/x-amz-json-1.1
+
+{
+   "AuthFlow" : "USER_PASSWORD_AUTH",
+   "AuthParameters" : {
+      "USERNAME" : "",
+      "PASSWORD" : ""
+   },
+   "ClientId" : ""
+}
+
+###
+POST https://cognito-idp.eu-central-1.amazonaws.com/
+X-Amz-Target: AWSCognitoIdentityProviderService.RespondToAuthChallenge
+Content-Type: application/x-amz-json-1.1
+
+{
+    "ChallengeName": "NEW_PASSWORD_REQUIRED",
+    "ChallengeResponses": {
+        "USERNAME": "...",
+        "NEW_PASSWORD": "..."
+    },
+    "ClientId": "...",
+    "Session": "..."
+}
+
+###
+GET http://localhost:8080/hello
+Authorization: Bearer ey...
+
+###
+GET http://localhost:8080/hello
